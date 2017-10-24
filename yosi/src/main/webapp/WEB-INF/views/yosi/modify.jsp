@@ -21,6 +21,8 @@
 <!-- Latest compiled and minified JavaScript -->
 </head>
 <style>
+body { padding-top:30px; }
+
 .meButton {
 	-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -162,7 +164,7 @@
 	top: 1px;
 }
 </style>
-<body>
+<body style="overflow:scroll; overflow-x:hidden">
 	<div class="container">
 		<table class="table table-bordered">
 			<thead>

@@ -13,5 +13,6 @@ public class BoardDTO {
 	private String writer;
 	private Date regdate;
 	private Integer viewcnt;
+	private int replycnt;
 
 }
