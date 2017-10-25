@@ -30,8 +30,9 @@ public class ReplyController {
 	//댓글 리스트 가져오기
 	@GetMapping("/list/{tno}")
 	public List<ReplyDTO> list(@PathVariable("tno") Long tno) {
-		ReplyDTO dto = new ReplyDTO();
-		dto.setTno(tno);
+		
+//		ReplyDTO dto = new ReplyDTO();
+//		dto.setTno(tno);
 		return service.listReply(tno);
 
 	}
@@ -40,5 +41,30 @@ public class ReplyController {
 	@PostMapping("/add")
 	public void addReply(@RequestBody ReplyDTO dto) {
 		service.register(dto);
+	}
+	
+	//댓글 삭제
+	@DeleteMapping("/{rno}")
+	public ResponseEntity<String> removeReply(@PathVariable("rno") Integer rno){
+		
+		log.info("Remove RNO: " + rno);
+		
+		service.remove(rno);
+		
+		return new ResponseEntity<String>("removed", HttpStatus.OK);
+	}
+	
+	//댓글 수정
+	@PutMapping("/{rno}")
+	public ResponseEntity<String> updateReply(
+			@PathVariable("rno") Integer rno, @RequestBody ReplyDTO dto){
+		
+		dto.setRno(rno);
+		
+		log.info("Update RNO: " + rno);
+		
+		service.update(dto);
+		
+		return new ResponseEntity<String>("update", HttpStatus.OK);
 	}
 }

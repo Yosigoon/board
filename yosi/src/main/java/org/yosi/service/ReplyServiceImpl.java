@@ -35,5 +35,15 @@ public class ReplyServiceImpl implements ReplyService {
 
 	}
 	
+	@Override
+	public void remove(Integer rno) {
+		mapper.delete(rno);
+	}
+	
+	@Override
+	public void update(ReplyDTO dto) {
+		mapper.update(dto);
+	}
+	
 
 }

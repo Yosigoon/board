@@ -2,39 +2,19 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@include file="../include/header.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>List Table</title>
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
-
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-	integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-	crossorigin="anonymous"></script>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous"></script>
-
+<title>List Table</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
 	href="http://bootsnipp.com/dist/bootsnipp.min.css">
-
-<title>Future Imperfect by HTML5 UP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">	
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-<link rel="stylesheet" href="/resources/assets/css/main.css" />
-<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-
 </head>
-
 <style>
 body {
 	background-image:
@@ -116,82 +96,7 @@ strong, b {
     font-weight: 700;
 }
 </style>
-				
-<body>
 
-<div id="wrapper">
-	<!-- Header -->
-	<header id="header">
-	<h1>
-		<a href="/yosi/index">Yosi Index</a>
-	</h1>
-	<nav class="links">
-	<ul>
-		<li><a href="#">Home</a></li>
-		<li><a href="#">Board</a></li>
-		<li><a href="#">개발중</a></li>
-		<li><a href="#">개발중</a></li>
-		<li><a href="#">개발중</a></li>
-	</ul>
-	</nav> <nav class="main">
-	<ul>
-		<li class="search"><a class="fa-search" href="#search">Search</a>
-			<form id="search" method="get" action="#">
-				<input type="text" name="query" placeholder="Search" />
-			</form></li>
-		<li class="menu"><a class="fa-bars" href="#menu">Menu</a></li>
-	</ul>
-	</nav>
-	
-	</header>
-	<!-- Menu -->
-	<section id="menu">
-
-		<!-- Search -->
-			<section>
-				<form class="search" method="get" action="#">
-					<input type="text" name="query" placeholder="Search" />
-				</form>
-			</section>
-
-		<!-- Links -->
-			<section>
-				<ul class="links">
-					<li>
-						<a href="#">
-							<h3>Lorem ipsum</h3>
-							<p>Feugiat tempus veroeros dolor</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<h3>Dolor sit amet</h3>
-							<p>Sed vitae justo condimentum</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<h3>Feugiat veroeros</h3>
-							<p>Phasellus sed ultricies mi congue</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<h3>Etiam sed consequat</h3>
-							<p>Porta lectus amet ultricies</p>
-						</a>
-					</li>
-				</ul>
-			</section>
-
-		<!-- Actions -->
-			<section>
-				<ul class="actions vertical">
-					<li><a href="#" class="button big fit">Log In</a></li>
-				</ul>
-			</section>
-
-	</section>
 				
 	<div class="container">
 		<div class="panel panel-success">
@@ -288,12 +193,20 @@ strong, b {
 	</div>
 	</div>	
 	<!-- Scripts -->
-			<script src="/resources/assets/js/jquery.min.js"></script>
-			<script src="/resources/assets/js/skel.min.js"></script>
-			<script src="/resources/assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/resources/assets/js/main.js"></script>
-			
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+	<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+	integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+	crossorigin="anonymous"></script>
+	
+	<script src="/resources/assets/js/jquery.min.js"></script>
+	<script src="/resources/assets/js/skel.min.js"></script>
+	<script src="/resources/assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="/resources/assets/js/main.js"></script>
+		
 	<script src="/resources/js/paging.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {

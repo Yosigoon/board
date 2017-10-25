@@ -164,7 +164,7 @@ body { padding-top:30px; }
 	top: 1px;
 }
 </style>
-<body style="overflow:scroll; overflow-x:hidden">
+<body>
 	<div class="container">
 		<table class="table table-bordered">
 			<thead>

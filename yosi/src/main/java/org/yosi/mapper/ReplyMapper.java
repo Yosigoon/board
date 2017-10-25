@@ -19,6 +19,11 @@ public interface ReplyMapper {
 	@Insert("insert into tbl_reply_board (reply, replyer, tno) values (#{reply}, #{replyer}, #{tno})")
 	public void create(ReplyDTO dto);
 	
+	@Delete("delete from tbl_reply_board where rno = #{rno}")
+	public void delete(Integer rno);
+	
+	@Update("update tbl_reply_board set reply = #{reply}, replyer = #{replyer} where rno = #{rno}")
+	public void update(ReplyDTO dto);
 	
 
 }

@@ -10,6 +10,10 @@ public interface ReplyService {
 	public List<ReplyDTO> listReply(Long tno);
 	
 	public void register(ReplyDTO dto);
+	
+	public void remove(Integer rno);
+	
+	public void update(ReplyDTO dto);
 
 	
 }
