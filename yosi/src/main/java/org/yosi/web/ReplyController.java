@@ -40,16 +40,17 @@ public class ReplyController {
 	//댓글 등록
 	@PostMapping("/add")
 	public void addReply(@RequestBody ReplyDTO dto) {
+		log.info("컨트롤러 =========  " + dto.getTno());
 		service.register(dto);
 	}
 	
 	//댓글 삭제
 	@DeleteMapping("/{rno}")
-	public ResponseEntity<String> removeReply(@PathVariable("rno") Integer rno){
+	public ResponseEntity<String> removeReply(@PathVariable("rno") Integer rno, @RequestBody ReplyDTO dto){
 		
 		log.info("Remove RNO: " + rno);
-		
-		service.remove(rno);
+		log.info("Remove TNO: " + dto.getTno());
+		service.remove(dto);
 		
 		return new ResponseEntity<String>("removed", HttpStatus.OK);
 	}
@@ -57,7 +58,7 @@ public class ReplyController {
 	//댓글 수정
 	@PutMapping("/{rno}")
 	public ResponseEntity<String> updateReply(
-			@PathVariable("rno") Integer rno, @RequestBody ReplyDTO dto){
+			@PathVariable("rno") Long rno, @RequestBody ReplyDTO dto){
 		
 		dto.setRno(rno);
 		

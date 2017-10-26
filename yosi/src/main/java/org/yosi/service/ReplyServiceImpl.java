@@ -27,23 +27,29 @@ public class ReplyServiceImpl implements ReplyService {
 	public List<ReplyDTO> listReply(Long tno) {
 		return mapper.list(tno);
 	}
+	
 	@Override
 	public void register(ReplyDTO dto) {
-		
+//		log.info("¼­ºñ½º =========  " + dto.getTno());
 		mapper.create(dto);
-		boardmapper.updateReplyCnt(dto.getTno());
+		boardmapper.addUpdateReplyCnt(dto.getTno());
 
 	}
 	
 	@Override
-	public void remove(Integer rno) {
-		mapper.delete(rno);
+	public void remove(ReplyDTO dto) {
+		log.info("");
+		mapper.delete(dto.getRno());
+		boardmapper.removeUpdateReplyCnt(dto.getTno());
+		
 	}
 	
 	@Override
 	public void update(ReplyDTO dto) {
 		mapper.update(dto);
 	}
+
+
 	
 
 }

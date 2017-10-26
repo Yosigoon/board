@@ -462,6 +462,7 @@ body {
 	position: relative;
 	top: 1px;
 }
+
 </style>
 <body>
 	<div class="container">
@@ -519,9 +520,9 @@ body {
 					<div class="panel-body">
 						<fieldset>
 							<div class="form-group">
-								<textarea id="reply" class="form-control" rows="3" placeholder="댓글을 입력하세요"></textarea>
+								<textarea id="reply" class="form-control" rows="3" placeholder="댓글을 입력하세요" ></textarea>
+								<button id="addReply" class="rbtn pull-right">댓글 등록</button>
 							</div>
-							<button id="addReply" class="rbtn pull-right">댓글 등록</button>
 							
 						</fieldset>
 					</div>
@@ -582,7 +583,7 @@ body {
 			 var time = new Date(arr[i].replydate);
 			 var replyDate = (time.getFullYear()+"-"+(time.getMonth()+1)+"-"+ time.getDate()+" "+time.getHours()+":"+time.getMinutes());
 	    	console.log(replyDate);
-            str += "<div>댓글 등록 날짜 : "+replyDate+"</div><table class = 'table table-bordered'><tr><td colspan='3' data-rno="+ arr[i].rno + "><input name='set' type='text' class='form-control' readonly='readonly' value="+ arr[i].reply +' data-rno='+ arr[i].rno +'><button data-rno='+ arr[i].rno +" id='modBtn' class='modbtn pull-right'>수정</button><button data-rno='" + arr[i].rno +"' class='delbtn pull-right' id='delBtn'>삭제</button></td></tr></table>";
+            str += "<div>댓글 등록 날짜 : "+replyDate+"</div><table class = 'table table-bordered'><tr><td colspan='3' data-rno="+ arr[i].rno +"><textarea name='set' type='text' class='form-control' readonly='readonly' data-rno="+ arr[i].rno +">"+arr[i].reply+"</textarea><button data-rno="+ arr[i].rno +" id='modBtn' class='modbtn pull-right'>수정</button><button data-rno=" + arr[i].rno +" class='delbtn pull-right' id='delBtn'>삭제</button></td></tr></table>";
 	     }
 	     //console.log(str);
          $(".replyDiv").html(str);
@@ -620,13 +621,16 @@ body {
 	$(".replyDiv").on("click", "#delBtn", function(e){
 		e.preventDefault();
 		var rno = $(this).attr("data-rno");
-		if(confirm("삭제하시겠습니까?")){
+		var tno = $("input[name ='tno']").val();
 		
+		var data = {rno:rno, tno:tno};
+		if(confirm("삭제하시겠습니까?")){
+			
 			$.ajax({
 	            url:'/reply/' + rno,
 	            type: 'DELETE',
 	            contentType: "application/json; charset=utf-8",
-	            data:JSON.stringify(rno),
+	            data:JSON.stringify(data),
 	            success: function(result){
 	            	alert("댓글이 삭제되었습니다.");
 	                getReplies();
@@ -639,7 +643,7 @@ body {
 	$(".replyDiv").on("click", "#modBtn", function(e){
 		e.preventDefault();
 		var rno = $(this).attr("data-rno");
-		var set = $(this).parent().find("input[name='set']").attr("readonly",false);
+		var set = $(this).parent().find("textarea[name='set']").attr("readonly",false);
 		$(this).replaceWith("<button data-rno='"+ rno +"'id='setBtn' class='setbtn pull-right'>완료</button>");
 			
 	});
@@ -648,8 +652,8 @@ body {
 	$(".replyDiv").on("click", "#setBtn", function(e){
 		e.preventDefault();
 		var rno = $(this).attr("data-rno");
-		var set = $(this).parent().find("input[name='set']").attr("readonly",true);
-		var reply = $(this).parent().find("input[name='set']").val();
+		var set = $(this).parent().find("textarea[name='set']").attr("readonly",true);
+		var reply = $(this).parent().find("textarea[name='set']").val();
 		var data = { rno: rno, reply: reply };
 	
 		$.ajax({

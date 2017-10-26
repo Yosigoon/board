@@ -148,7 +148,7 @@ strong, b {
 							<tr class="edit" id="detail">
 								<td id="no" class="text-center">${board.tno}</td>
 								<td id="title" class="text-center"><a class='link'
-									href="/yosi/view?page=${cri.page}&tno=${board.tno}">${board.title}</a>[0]</td>
+									href="/yosi/view?page=${cri.page}&tno=${board.tno}">${board.title}</a>[${board.replycnt}]</td>
 
 								<td id="writer" class="text-center">${board.writer}</td>
 								<td id="regdate" class="text-center"><fmt:formatDate
@@ -240,7 +240,7 @@ strong, b {
 	    });
 	});
 		
-
+	
 		
 	</script>
 	

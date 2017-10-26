@@ -31,6 +31,9 @@ public interface BoardMapper {
 	public void update(BoardDTO dto);
 	
 	@Update("update tbl_board set replycnt = replycnt + 1 where tno = #{tno}")
-	public void updateReplyCnt(Long tno);
+	public void addUpdateReplyCnt(Long tno);
+	
+	@Update("update tbl_board set replycnt = replycnt - 1 where tno = #{tno}")
+	public void removeUpdateReplyCnt(Long tno);
 
 }

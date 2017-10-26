@@ -31,10 +31,10 @@ public class BoardController {
 		
 	}
 	
-	@GetMapping("/login")
-	public void login() {
-		
-	}
+//	@GetMapping("/login")
+//	public void login() {
+//		
+//	}
 	
 	@GetMapping("/list")
 	public void list(@ModelAttribute("cri") Criteria cri, Model model) {

@@ -24,5 +24,18 @@
 	<context:component-scan base-package="org.yosi.web" />
 	
 	
+	<beans:bean id="checkLogin" class="org.yosi.interceptor.LoginCheckInterceptor"></beans:bean>
+	<beans:bean id="afterLogin" class="org.yosi.interceptor.LoginAfterInterceptor"></beans:bean>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/yosi/register"/>
+			<beans:ref bean="checkLogin"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/yosi/login"/>
+			<beans:ref bean="afterLogin"/>
+		</interceptor>	
+	</interceptors>
 	
 </beans:beans>
