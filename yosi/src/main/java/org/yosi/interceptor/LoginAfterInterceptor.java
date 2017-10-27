@@ -10,6 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.yosi.dto.UserDTO;
 
+import lombok.extern.java.Log;
+
+@Log
 public class LoginAfterInterceptor extends HandlerInterceptorAdapter {
 	
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
@@ -23,16 +26,15 @@ public class LoginAfterInterceptor extends HandlerInterceptorAdapter {
 //		System.out.println("AUTO:" + auto);
 		
 		Map<String, Object> map = modelAndView.getModel();
-		System.out.println("==============================");
-		System.out.println("MAP.........................");
-		System.out.println(map);
+		log.info("MAP.......... :" + map);
+		
+		log.info("map.get : "+map.get("userDTO"));
 	
 		if(map.get("userDTO") != null ) {
-			System.out.println("set session Data...................");
 			
 			//use session
 			request.getSession().setAttribute("userDTO", map.get("userDTO"));
-			System.out.println("================");
+			
 			
 			
 //			if(auto.equals("on")) {
@@ -45,9 +47,9 @@ public class LoginAfterInterceptor extends HandlerInterceptorAdapter {
 //		
 //			}
 //			
+			response.sendRedirect("/yosi/list");
+			return;
 		}
-		response.sendRedirect("/yosi/list");
-		return;
 		
 	}
 	

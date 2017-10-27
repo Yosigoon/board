@@ -120,7 +120,8 @@
             </tr>
             <tr>
                 <th>첨부파일: </th>
-                <td><input type="text" placeholder="파일을 선택하세요. " name="filename" class="form-control"/></td>
+                <td><input id = 'uploadFile' type="file" name="file" class="form-control"/></td>
+                <ul class='imgList'></ul>
             </tr>
             <tr>
                 <td colspan="2">
@@ -135,4 +136,12 @@
 </table>
 </div>
 </body>
+
+<script type="text/javascript">
+
+
+
+
+
+</script>
 </html>

@@ -40,6 +40,7 @@ public class ReplyController {
 	//댓글 등록
 	@PostMapping("/add")
 	public void addReply(@RequestBody ReplyDTO dto) {
+		
 		log.info("컨트롤러 =========  " + dto.getTno());
 		service.register(dto);
 	}

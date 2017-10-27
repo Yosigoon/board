@@ -421,23 +421,23 @@ to {
 						<a href="#" onclick="ocultar_login_sign_up()">
 						<i class="material-icons"></i></a>
 						<h2>LOGIN</h2>
-						<input type="text" placeholder="ID" name='uid'/>
-						<input type="password" placeholder="Password" name='upw' />
+						<input id="loginID" type="text" placeholder="ID" name='uid'/>
+						<input id="loginPW" type="password" placeholder="Password" name='upw' />
 						<button class="btn_login" type='submit'>LOGIN</button>
 					</div>
 					</form>
-					
+					<form method="post">
 					<div class="cont_form_sign_up">
 						<a href="#" onclick="ocultar_login_sign_up()">
 						<i class="material-icons"></i></a>
 						<h2>SIGN UP</h2>
-						<input type="text" placeholder="ID" />
-						<input type="text" placeholder="User" /> 
-						<input type="password" placeholder="Password" /> 
+						<input name = 'uid'type="text" placeholder="ID" />
+						<input name = 'uname' type="text" placeholder="UserName" /> 
+						<input name = 'upw' type="password" placeholder="Password" /> 
 						<input type="password" placeholder="Confirm Password" />
-						<button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+						<button class="btn_sign_up" type='submit'>SIGN UP</button>
 					</div>
-
+					</form>
 				</div>
 
 			</div>

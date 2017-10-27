@@ -322,10 +322,10 @@
 				<div class="col-sm-6 col-md-3 margin-bottom-30">
 					<h3 class="margin-bottom-10">Member</h3>
 					<ul class="menu">
-						<li><a href="#">Seung Woo</a></li>
-						<li><a href="#">Byung Ho</a></li>
-						<li><a href="#">Seo Hee</a></li>
-						<li><a href="#">Se Jin</a></li>
+						<li>Seung Woo</li>
+						<li>Byung Ho</li>
+						<li>Seo Hee</li>
+						<li>Se Jin</li>
 					</ul>
 					<div class="clearfix"></div>
 				</div>
@@ -339,13 +339,14 @@
 			<div class="row">
 				<!-- Footer Menu -->
 				<div id="footermenu" class="col-md-8">
-					<ul class="list-unstyled list-inline">
+				<!-- 	<ul class="list-unstyled list-inline">
 						<li><a href="#" target="_blank">Sample Link</a></li>
 						<li><a href="#" target="_blank">Sample Link</a></li>
 						<li><a href="#" target="_blank">Sample Link</a></li>
 						<li><a href="#" target="_blank">Sample Link</a></li>
 					</ul>
-				</div>
+				 -->
+				 </div>
 				<!-- End Footer Menu -->
 				<!-- Copyright -->
 				<div id="copyright" class="col-md-4">

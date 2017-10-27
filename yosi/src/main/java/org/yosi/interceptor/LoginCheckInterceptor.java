@@ -15,8 +15,7 @@ import lombok.extern.java.Log;
 @Log
 public class LoginCheckInterceptor extends HandlerInterceptorAdapter{
 	
-	@Autowired
-	private UserService service;
+
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -25,11 +24,11 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter{
 		
 		boolean useSession = request.getSession().getAttribute("userDTO") != null?true:false;
 		
+		log.info("bolean..."+useSession);
 		
 		if(useSession) {
 			log.info("current user use session");
 			return true;
-			
 		}
 		
 //		Cookie loginCookie = WebUtils.getCookie(request, "login");
@@ -42,13 +41,12 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter{
 //			request.getSession().setAttribute("userDTO", dto);
 //			return true;
 //		}
-		
+		log.info("redirect");
+			
 		response.sendRedirect("/yosi/login");
-		return false;
 		
+		log.info("hm..........");
+		return false;
 	}
 	
-	
-	
-
 }

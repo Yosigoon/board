@@ -491,8 +491,8 @@ body {
 					</tr>
 					<tr>
 						<th>첨부파일:</th>
-						<td><input type="text" placeholder="파일을 선택하세요. "
-							name="filename" class="form-control" /></td>
+						<td><input type="file" placeholder="파일을 선택하세요. "
+							name="file" class="form-control" /></td>
 					</tr>
 					<tr>
 						<td colspan="2">
@@ -594,27 +594,30 @@ body {
 	//댓글 등록
 	$("#addReply").click(function(e){
 		e.preventDefault();
-		var temp = $("#reply").val();
-		if(temp.length === 0){
-			alert('댓글에 내용이 없습니다.');
-			return;
-		}
-			//console.log("addReply test");
-			var tno = $("input[name ='tno']").val();
-		    var data = {reply:$("#reply").val(), tno:tno};
-		    // id를 줘서 편하게 처리
-		    $("#reply").val(""); // 댓글등록 후 작성문 초기화
-			    $.ajax({ // 대소문자 조심
-			        url:'/reply/add',
-			        type:'POST',
-			        contentType: "application/json; charset=utf-8", //받는 레코드타입
-			        data:JSON.stringify(data),
-			        success: function(result){
-			        	getReplies();
-			        	alert("댓글이 등록되었습니다.");
-			        }
-			 	});
-		});
+		
+			var temp = $("#reply").val();
+			if(temp.length === 0){
+				alert('댓글에 내용이 없습니다.');
+				return;
+			}
+				//console.log("addReply test");
+				var tno = $("input[name ='tno']").val();
+			    var data = {reply:$("#reply").val(), tno:tno};
+			    // id를 줘서 편하게 처리
+			    
+			    $("#reply").val(""); // 댓글등록 후 작성문 초기화
+				    $.ajax({ // 대소문자 조심
+				        url:'/reply/add',
+				        type:'POST',
+				        contentType: "application/json; charset=utf-8", //받는 레코드타입
+				        data:JSON.stringify(data),
+				        success: function(result){
+				        	getReplies();
+				        	alert("댓글이 등록되었습니다.");
+				        }
+		 	}); 
+	   	
+	});
 	
 	
 	//댓글 삭제
